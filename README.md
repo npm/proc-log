@@ -27,9 +27,9 @@ log events that can be consumed by a listener on the process object.
   for debugging.
 * `log.http(...args)` calls `process.emit('log', 'http', ...args)`
   Information about HTTP requests made and/or completed.
-* `log.pause(...args)` calls `process.emit('log', 'pause')`  Used to tell
+* `log.pause()` calls `process.emit('log', 'pause')`  Used to tell
   the consumer to stop printing messages.
-* `log.resume(...args)` calls `process.emit('log', 'resume', ...args)`
+* `log.resume()` calls `process.emit('log', 'resume')`
   Used to tell the consumer that it is ok to print messages again.
 * `log.LEVELS` an array of strings of all log method names
 
