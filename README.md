@@ -4,7 +4,7 @@ Emits 'log' events on the process object which a log output listener can
 consume and print to the terminal.
 
 This is used by various modules within the npm CLI stack in order to send
-log events that [`npmlog`](http://npm.im/npmlog) can consume and print.
+log events that can be consumed by a listener on the process object.
 
 ## API
 
