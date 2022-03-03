@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.1](https://www.github.com/npm/proc-log/compare/v2.0.0...v2.0.1) (2022-03-03)
+
+
+### Documentation
+
+* fix pause/resume signatures ([adccecc](https://www.github.com/npm/proc-log/commit/adccecc2bf5e77427e3fefe826a8e5a1a57640d7))
+
 ## [2.0.0](https://www.github.com/npm/proc-log/compare/v1.0.0...v2.0.0) (2022-02-10)
 
 
