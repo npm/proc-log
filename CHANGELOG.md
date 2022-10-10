@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.0.0](https://github.com/npm/proc-log/compare/v2.0.1...v3.0.0) (2022-10-10)
+
+### ⚠️ BREAKING CHANGES
+
+* `proc-log` is now compatible with the following semver range for node: `^14.17.0 || ^16.13.0 || >=18.0.0`
+
+### Features
+
+* [`54c85c1`](https://github.com/npm/proc-log/commit/54c85c1d4c0ed59c48d6765b15e8918e2eaf8c3a) [#27](https://github.com/npm/proc-log/pull/27) postinstall for dependabot template-oss PR (@lukekarrys)
+
 ### [2.0.1](https://github.com/npm/proc-log/compare/v2.0.0...v2.0.1) (2022-03-28)
 
 
