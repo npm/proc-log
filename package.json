@@ -6,6 +6,7 @@
     "lib/"
   ],
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "description": "just emit 'log' events on the process object",
   "repository": {
     "type": "git",
