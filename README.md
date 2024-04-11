@@ -31,6 +31,8 @@ const { log } = require('proc-log')
   for debugging.
 * `log.http(...args)` calls `process.emit('log', 'http', ...args)`
   Information about HTTP requests made and/or completed.
+* `log.timing(...args)` calls `process.emit('log', 'timing', ...args)`
+  Timing information.
 * `log.pause()` calls `process.emit('log', 'pause')`  Used to tell
   the consumer to stop printing messages.
 * `log.resume()` calls `process.emit('log', 'resume')`
@@ -39,7 +41,7 @@ const { log } = require('proc-log')
 
 ## Examples
 
-Every method calls `process.emit('log', level, ...otherArgs)` internally.
+Every `log` method calls `process.emit('log', level, ...otherArgs)` internally.
 So in order to consume those events you need to do `process.on('log', fn)`.
 
 ### Colorize based on level

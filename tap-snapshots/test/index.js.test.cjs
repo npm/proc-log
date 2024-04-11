@@ -14,6 +14,7 @@ Array [
   "verbose",
   "http",
   "silly",
+  "timing",
   "pause",
   "resume",
 ]
