@@ -1,53 +1,56 @@
 # proc-log
 
-Emits 'log' events on the process object which a log output listener can
-consume and print to the terminal.
+Emits events on the process object which a listener can consume and print to the terminal or log file.
 
-This is used by various modules within the npm CLI stack in order to send
-log events that can be consumed by a listener on the process object.
+This is used by various modules within the npm CLI stack in order to send log events that can be consumed by a listener on the process object.
+
+Currently emits `log` and `output` events.
 
 ## API
 
 ```js
-const { log } = require('proc-log')
+const { log, output } = require('proc-log')
 ```
 
+#### output
+* `output.standard(...args)` calls `process.emit('output', 'standard', ...args)`
+  This is for general standard output.  Consumers will typically show this on stdout (after optionally formatting or filtering it).
+* `output.error(...args)` calls `process.emit('output', 'error', ...args)`
+  This is for general error output.  Consumers will typically show this on stderr (after optionally formatting or filtering it).
+* `output.buffer(...args)` calls `process.emit('output', 'buffer', ...args)`
+  This is for buffered output.  Consumers will typically buffer this until they are ready to display.
+* `output.LEVELS` an array of strings of all output method names
+
+#### log
 * `log.error(...args)` calls `process.emit('log', 'error', ...args)`
-  The highest log level.  For printing extremely serious errors that
-  indicate something went wrong.
+  The highest log level.  For printing extremely serious errors that indicate something went wrong.
 * `log.warn(...args)` calls `process.emit('log', 'warn', ...args)`
-  A fairly high log level.  Things that the user needs to be aware of, but
-  which won't necessarily cause improper functioning of the system.
+  A fairly high log level.  Things that the user needs to be aware of, but which won't necessarily cause improper functioning of the system.
 * `log.notice(...args)` calls `process.emit('log', 'notice', ...args)`
-  Notices which are important, but not necessarily dangerous or a cause for
-  excess concern.
+  Notices which are important, but not necessarily dangerous or a cause for excess concern.
 * `log.info(...args)` calls `process.emit('log', 'info', ...args)`
-  Informative messages that may benefit the user, but aren't particularly
-  important.
+  Informative messages that may benefit the user, but aren't particularly important.
 * `log.verbose(...args)` calls `process.emit('log', 'verbose', ...args)`
   Noisy output that is more detail that most users will care about.
 * `log.silly(...args)` calls `process.emit('log', 'silly', ...args)`
-  Extremely noisy excessive logging messages that are typically only useful
-  for debugging.
+  Extremely noisy excessive logging messages that are typically only useful for debugging.
 * `log.http(...args)` calls `process.emit('log', 'http', ...args)`
   Information about HTTP requests made and/or completed.
 * `log.timing(...args)` calls `process.emit('log', 'timing', ...args)`
   Timing information.
-* `log.pause()` calls `process.emit('log', 'pause')`  Used to tell
-  the consumer to stop printing messages.
+* `log.pause()` calls `process.emit('log', 'pause')`
+  Used to tell the consumer to stop printing messages.
 * `log.resume()` calls `process.emit('log', 'resume')`
   Used to tell the consumer that it is ok to print messages again.
 * `log.LEVELS` an array of strings of all log method names
 
 ## Examples
 
-Every `log` method calls `process.emit('log', level, ...otherArgs)` internally.
-So in order to consume those events you need to do `process.on('log', fn)`.
+Every `log` method calls `process.emit('log', level, ...otherArgs)` internally.  So in order to consume those events you need to do `process.on('log', fn)`.
 
 ### Colorize based on level
 
-Here's an example of how to consume `proc-log` events and colorize them
-based on level:
+Here's an example of how to consume `proc-log` log events and colorize them based on level:
 
 ```js
 const chalk = require('chalk')
@@ -63,18 +66,13 @@ process.on('log', (level, ...args) => {
 
 ### Pause and resume
 
-`pause` and `resume` are included so you have the ability to tell your consumer
-that you want to pause or resume your display of logs. In the npm CLI we use
-this to buffer all logs on init until we know the correct loglevel to display.
-But we  also setup a second handler that writes everything to a file even if
-paused.
+`log.pause` and `log.resume` are included so you have the ability to tell your consumer that you want to pause or resume your display of logs. In the npm CLI we use this to buffer all logs on init until we know the correct loglevel to display.  But we also setup a second handler that writes everything to a file even if paused.
 
 ```js
 let paused = true
 const buffer = []
 
-// this handler will buffer and replay logs only
-// after `procLog.resume()` is called
+// this handler will buffer and replay logs only after `procLog.resume()` is called
 process.on('log', (level, ...args) => {
   if (level === 'resume') {
     buffer.forEach((item) => console.log(...item))

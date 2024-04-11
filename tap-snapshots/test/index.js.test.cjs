@@ -19,3 +19,11 @@ Array [
   "resume",
 ]
 `
+
+exports[`test/index.js TAP output > output levels 1`] = `
+Array [
+  "standard",
+  "error",
+  "buffer",
+]
+`
