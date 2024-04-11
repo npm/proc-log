@@ -1,5 +1,5 @@
 const t = require('tap')
-const log = require('../')
+const { log } = require('../')
 const { LEVELS } = log
 
 t.matchSnapshot(LEVELS, 'log levels')

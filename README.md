@@ -8,6 +8,10 @@ log events that can be consumed by a listener on the process object.
 
 ## API
 
+```js
+const { log } = require('proc-log')
+```
+
 * `log.error(...args)` calls `process.emit('log', 'error', ...args)`
   The highest log level.  For printing extremely serious errors that
   indicate something went wrong.
