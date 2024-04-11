@@ -5,7 +5,7 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
-exports[`test/index.js TAP > log levels 1`] = `
+exports[`test/index.js TAP log > log levels 1`] = `
 Array [
   "notice",
   "error",
