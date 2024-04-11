@@ -1,5 +1,7 @@
 const t = require('tap')
 const procLog = require('../')
+// This makes sure we are testing the two known exported methods.
+t.plan(2)
 for (const method in procLog) {
   t.test(method, t => {
     const log = procLog[method]
