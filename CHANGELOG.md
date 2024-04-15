@@ -1,5 +1,15 @@
 # Changelog
 
+## [4.1.0](https://github.com/npm/proc-log/compare/v4.0.0...v4.1.0) (2024-04-15)
+
+### Features
+
+* [`e00086e`](https://github.com/npm/proc-log/commit/e00086ea425a9cb6a849e3853bd3ae79910b3d44) [#80](https://github.com/npm/proc-log/pull/80) add timers and read (@lukekarrys)
+
+### Bug Fixes
+
+* [`4832b21`](https://github.com/npm/proc-log/commit/4832b21f33513ceb0482ba1757594e9776cff408) [#80](https://github.com/npm/proc-log/pull/80) remove args from log pause/resume (@lukekarrys)
+
 ## [4.0.0](https://github.com/npm/proc-log/compare/v3.0.0...v4.0.0) (2024-04-12)
 
 ### ⚠️ BREAKING CHANGES
