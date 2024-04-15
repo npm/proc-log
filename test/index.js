@@ -30,6 +30,8 @@ for (const method in procLog) {
                 break
               case 'input.start':
               case 'input.end':
+              case 'log.pause':
+              case 'log.resume':
                 t.strictSame(args, [], 'no args')
                 break
               case 'input.read':
