@@ -25,6 +25,10 @@ const { log, output, input, time } = require('proc-log')
   
   This is for buffered output.  Consumers will typically buffer this until they are ready to display.
 
+* `output.flush(...args)` calls `process.emit('output', 'flush', ...args)`
+  
+  This is to indicate that the output buffer should be flushed.
+
 * `output.LEVELS` an array of strings of all output method names
 
 #### log

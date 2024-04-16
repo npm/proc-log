@@ -55,6 +55,7 @@ exports[`test/index.js TAP output > output keys 1`] = `
 Object {
   "buffer": "buffer",
   "error": "error",
+  "flush": "flush",
   "standard": "standard",
 }
 `
@@ -64,6 +65,7 @@ Array [
   "standard",
   "error",
   "buffer",
+  "flush",
 ]
 `
 
