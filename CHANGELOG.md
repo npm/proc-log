@@ -1,5 +1,11 @@
 # Changelog
 
+## [4.2.0](https://github.com/npm/proc-log/compare/v4.1.0...v4.2.0) (2024-04-16)
+
+### Features
+
+* [`4c0d3cf`](https://github.com/npm/proc-log/commit/4c0d3cfde92e639e81a76655df74e0204a56eec8) [#85](https://github.com/npm/proc-log/pull/85) add flush method to output (#85) (@lukekarrys)
+
 ## [4.1.0](https://github.com/npm/proc-log/compare/v4.0.0...v4.1.0) (2024-04-15)
 
 ### Features
