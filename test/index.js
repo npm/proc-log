@@ -2,9 +2,17 @@ const t = require('tap')
 const procLog = require('../')
 
 // This makes sure we are testing all known exported methods.
-t.plan(4)
+t.plan(5)
 
 for (const method in procLog) {
+  if (method === 'META') {
+    t.test(method, t => {
+      t.type(procLog[method], 'symbol')
+      t.end()
+    })
+    continue
+  }
+
   t.test(method, t => {
     const log = procLog[method]
     const { LEVELS, KEYS } = log
