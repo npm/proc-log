@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.2.1](https://github.com/npm/proc-log/compare/v4.2.0...v4.2.1) (2024-04-21)
+
+### Chores
+
+* [`e12dd15`](https://github.com/npm/proc-log/commit/e12dd15f94483daf7237468a6f4c9df96a4b523d) [#83](https://github.com/npm/proc-log/pull/83) chore: chore: postinstall for dependabot template-oss PR (@lukekarrys)
+* [`a942826`](https://github.com/npm/proc-log/commit/a942826b64da7399cbe15dfdd55ea19de886e2e8) [#83](https://github.com/npm/proc-log/pull/83) bump @npmcli/template-oss from 4.21.3 to 4.21.4 (@dependabot[bot])
+
 ## [4.2.0](https://github.com/npm/proc-log/compare/v4.1.0...v4.2.0) (2024-04-16)
 
 ### Features
