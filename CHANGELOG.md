@@ -1,5 +1,18 @@
 # Changelog
 
+## [5.0.0](https://github.com/npm/proc-log/compare/v4.2.0...v5.0.0) (2024-09-03)
+### ⚠️ BREAKING CHANGES
+* `proc-log` now supports node `^18.17.0 || >=20.5.0`
+### Bug Fixes
+* [`aa3a1f6`](https://github.com/npm/proc-log/commit/aa3a1f65bf38bfd3305a73bdf4b432af12393012) [#101](https://github.com/npm/proc-log/pull/101) align to npm 10 node engine range (@hashtagchris)
+### Chores
+* [`2697148`](https://github.com/npm/proc-log/commit/2697148878a32af8c56745486dd0ed44b0e403aa) [#101](https://github.com/npm/proc-log/pull/101) run template-oss-apply (@hashtagchris)
+* [`4e025d2`](https://github.com/npm/proc-log/commit/4e025d25c53cd85b767fc9e735f756b9f51a7b57) [#99](https://github.com/npm/proc-log/pull/99) bump @npmcli/eslint-config from 4.0.5 to 5.0.0 (@dependabot[bot])
+* [`3d6ab24`](https://github.com/npm/proc-log/commit/3d6ab248c75c9bca053755da4fe9c74e894f0066) [#88](https://github.com/npm/proc-log/pull/88) bump @npmcli/template-oss to 4.22.0 (@lukekarrys)
+* [`e12dd15`](https://github.com/npm/proc-log/commit/e12dd15f94483daf7237468a6f4c9df96a4b523d) [#83](https://github.com/npm/proc-log/pull/83) chore: chore: postinstall for dependabot template-oss PR (@lukekarrys)
+* [`3cfe857`](https://github.com/npm/proc-log/commit/3cfe8571050f83fe0452a107a0696cafe1af1a51) [#100](https://github.com/npm/proc-log/pull/100) postinstall for dependabot template-oss PR (@hashtagchris)
+* [`2b4320c`](https://github.com/npm/proc-log/commit/2b4320c544a0e42fc784d5f75d042908a7227cf6) [#100](https://github.com/npm/proc-log/pull/100) bump @npmcli/template-oss from 4.23.1 to 4.23.3 (@dependabot[bot])
+
 ## [4.2.0](https://github.com/npm/proc-log/compare/v4.1.0...v4.2.0) (2024-04-16)
 
 ### Features
