@@ -1,5 +1,14 @@
 # Changelog
 
+## [6.0.0](https://github.com/npm/proc-log/compare/v5.0.0...v6.0.0) (2025-10-22)
+### ⚠️ BREAKING CHANGES
+* `proc-log` now supports node `^20.17.0 || >=22.9.0`
+### Bug Fixes
+* [`d8f7cab`](https://github.com/npm/proc-log/commit/d8f7cab84f366c5982e37716df9f5dcb0fcc8a68) [#112](https://github.com/npm/proc-log/pull/112) align to npm 11 node engine range (#112) (@owlstronaut)
+### Chores
+* [`9487f15`](https://github.com/npm/proc-log/commit/9487f156a5ab659ac5977b5a9ba1168ed037f650) [#106](https://github.com/npm/proc-log/pull/106) postinstall workflow updates (#106) (@owlstronaut)
+* [`1c62cfe`](https://github.com/npm/proc-log/commit/1c62cfe995b1d0a97c823d52fb81f5238b69f8df) [#111](https://github.com/npm/proc-log/pull/111) bump @npmcli/template-oss from 4.26.0 to 4.27.1 (#111) (@dependabot[bot], @npm-cli-bot)
+
 ## [5.0.0](https://github.com/npm/proc-log/compare/v4.2.0...v5.0.0) (2024-09-03)
 ### ⚠️ BREAKING CHANGES
 * `proc-log` now supports node `^18.17.0 || >=20.5.0`
