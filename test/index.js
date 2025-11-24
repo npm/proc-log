@@ -21,7 +21,7 @@ for (const method in procLog) {
     t.matchSnapshot(KEYS, `${method} keys`)
 
     t.strictSame(Object.keys(KEYS), LEVELS, 'all keys are in levels')
-    t.strictSame(Object.values(KEYS), LEVELS, 'all vales are in levels')
+    t.strictSame(Object.values(KEYS), LEVELS, 'all values are in levels')
 
     t.test(`all ${method}.LEVELS have a function in ${method}`, t => {
       for (const level of LEVELS) {
@@ -36,8 +36,6 @@ for (const method in procLog) {
               case 'time.end':
                 t.strictSame(args, [1], 'single arg')
                 break
-              case 'input.start':
-              case 'input.end':
               case 'log.pause':
               case 'log.resume':
                 t.strictSame(args, [], 'no args')
@@ -47,7 +45,7 @@ for (const method in procLog) {
                 t.same(args.slice(2), [1, 'two', [3], { 4: 4 }], 'got expected args')
                 break
               default:
-                t.same(args, [1, 'two', [3], { 4: 4 }], 'got expected args')
+                t.same(args, [1, 'two', [3], { 4: 4 }], `got expected args ${method}.${level}`)
             }
 
             t.end()

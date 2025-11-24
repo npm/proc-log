@@ -75,5 +75,49 @@ t.test('start and end', t => {
     t.ok(called.end)
   })
 
+  t.test('sync no callback but args', t => {
+    const called = {}
+    const handler = (level, ...args) => {
+      if (level === 'start') {
+        called.start = args
+      } else if (level === 'end') {
+        called.end = args
+        if (called.start && called.end) {
+          t.strictSame(called.start, [{ silent: true }], 'start event gets silent option')
+          t.strictSame(called.end, [{ silent: true }], 'end event gets silent option')
+          t.end()
+        }
+      }
+    }
+
+    process.on('input', handler)
+    t.teardown(() => process.off('input', handler))
+
+    const end = input.start({ silent: true })
+    end()
+  })
+
+  t.test('async no callback but args', async t => {
+    const called = {}
+    const handler = (level, ...args) => {
+      if (level === 'start') {
+        called.start = args
+      } else if (level === 'end') {
+        called.end = args
+        if (called.start && called.end) {
+          t.strictSame(called.start, [{ silent: true }], 'start event gets silent option')
+          t.strictSame(called.end, [{ silent: true }], 'end event gets silent option')
+          t.end()
+        }
+      }
+    }
+
+    process.on('input', handler)
+    t.teardown(() => process.off('input', handler))
+
+    const end = await input.start({ silent: true })
+    end()
+  })
+
   t.end()
 })
