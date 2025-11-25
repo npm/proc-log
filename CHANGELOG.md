@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.1.0](https://github.com/npm/proc-log/compare/v6.0.0...v6.1.0) (2025-11-25)
+### Features
+* [`4783d60`](https://github.com/npm/proc-log/commit/4783d609cee4729bd52b5a377ea5666e40fe864c) [#117](https://github.com/npm/proc-log/pull/117) support args for input (#117) (@mbtools)
+### Chores
+* [`f5ee8ae`](https://github.com/npm/proc-log/commit/f5ee8ae93549f7cbe3bfec69e64a221726f826f9) [#114](https://github.com/npm/proc-log/pull/114) bump @npmcli/eslint-config from 5.1.0 to 6.0.0 (#114) (@dependabot[bot])
+* [`5e6692a`](https://github.com/npm/proc-log/commit/5e6692ac2e49d17b58d3c238975b459197d262a8) [#116](https://github.com/npm/proc-log/pull/116) bump @npmcli/template-oss from 4.28.0 to 4.28.1 (#116) (@dependabot[bot], @npm-cli-bot)
+
 ## [6.0.0](https://github.com/npm/proc-log/compare/v5.0.0...v6.0.0) (2025-10-22)
 ### ⚠️ BREAKING CHANGES
 * `proc-log` now supports node `^20.17.0 || >=22.9.0`
