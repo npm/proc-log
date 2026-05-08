@@ -1,5 +1,16 @@
 # Changelog
 
+## [7.0.0](https://github.com/npm/proc-log/compare/v6.1.0...v7.0.0) (2026-05-08)
+### ⚠️ BREAKING CHANGES
+* `proc-log` now supports node `^22.22.2 || ^24.15.0 || >=26.0.0`
+* template-oss-apply
+### Features
+* [`4ef9ced`](https://github.com/npm/proc-log/commit/4ef9cedf09a46bebd428ed432d91e3d930f357f5) [#123](https://github.com/npm/proc-log/pull/123) bump to new node engine range (@owlstronaut)
+* [`720fc66`](https://github.com/npm/proc-log/commit/720fc669f3b20b890811d725e51f49cf22f87b9e) [#123](https://github.com/npm/proc-log/pull/123) template-oss-apply (@owlstronaut)
+### Chores
+* [`f56d754`](https://github.com/npm/proc-log/commit/f56d7548c2cf111e193450fae2cf68691824772a) [#123](https://github.com/npm/proc-log/pull/123) template-oss-apply (@owlstronaut)
+* [`d238f6e`](https://github.com/npm/proc-log/commit/d238f6e98f7715ac5eabe5c85f8263e85c4438e3) [#121](https://github.com/npm/proc-log/pull/121) bump @npmcli/template-oss from 4.29.0 to 4.30.0 (#121) (@dependabot[bot], @npm-cli-bot)
+
 ## [6.1.0](https://github.com/npm/proc-log/compare/v6.0.0...v6.1.0) (2025-11-25)
 ### Features
 * [`4783d60`](https://github.com/npm/proc-log/commit/4783d609cee4729bd52b5a377ea5666e40fe864c) [#117](https://github.com/npm/proc-log/pull/117) support args for input (#117) (@mbtools)
