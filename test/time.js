@@ -34,6 +34,30 @@ t.test('time can run an async callback', async t => {
   t.equal(res, 1)
 })
 
+t.test('time ends when a sync callback errors', t => {
+  const events = []
+  const handler = (...args) => events.push(args)
+  process.on('time', handler)
+  t.teardown(() => process.off('time', handler))
+
+  const error = new Error('not ok')
+  let caught
+  try {
+    time.start('timerName', () => {
+      throw error
+    })
+  } catch (err) {
+    caught = err
+  }
+
+  t.equal(caught, error, 'preserves the original synchronous error')
+  t.strictSame(events, [
+    ['start', 'timerName'],
+    ['end', 'timerName'],
+  ], 'ends the timer once with its original name')
+  t.end()
+})
+
 t.test('time can run an async callback that errors', async t => {
   const called = {}
   const handler = (level) => called[level] = true
