@@ -60,6 +60,30 @@ t.test('start and end', t => {
     t.equal(res, 1)
   })
 
+  t.test('sync callback that errors', t => {
+    const events = []
+    const handler = (...args) => events.push(args)
+    process.on('input', handler)
+    t.teardown(() => process.off('input', handler))
+
+    const error = new Error('not ok')
+    let caught
+    try {
+      input.start(() => {
+        throw error
+      }, { silent: true })
+    } catch (err) {
+      caught = err
+    }
+
+    t.equal(caught, error, 'preserves the original synchronous error')
+    t.strictSame(events, [
+      ['start', { silent: true }],
+      ['end', { silent: true }],
+    ], 'ends input once with the original arguments')
+    t.end()
+  })
+
   t.test('async callback that errors', async t => {
     const called = {}
     const handler = (level) => called[level] = true
